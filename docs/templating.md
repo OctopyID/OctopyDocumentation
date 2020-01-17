@@ -14,7 +14,7 @@ Octopy is the simple, yet powerful templating engine provided with Octopy. Unlik
 
 Two of the primary benefits of using Octopy are _template inheritance_ and _sections_. To get started, let's take a look at a simple example. First, we will examine a "master" page layout. Since most web applications maintain the same general layout across various pages, it's convenient to define this layout as a single Octopy view:
 
-```html
+```php
 <html>
     <head>
         <title>App Name - @yield('title')</title>
@@ -39,7 +39,7 @@ Now that we have defined a layout for our application, let's define a child page
 
 When defining a child view, use the Octopy `@parent` directive to specify which layout the child view should "inherit". Views which extend a Octopy layout may inject content into the layout's sections using `@block` directives. Remember, as seen in the example above, the contents of these sections will be displayed in the layout using `@yield`:
 
-```html
+```php
 @parent('layouts.app')
 
 @block('title', 'Page Title')
@@ -77,21 +77,21 @@ Route::get('greeting', function (Octopy\HTTP\Response $response) {
 
 You may display the contents of the `name` variable like so:
 
-```html
+```php
 Hello, {{ $name }}.
 ```
 > Octopy `{{ }}` statements are automatically sent through PHP's `htmlspecialchars` function to prevent XSS attacks.
 
 You are not limited to displaying the contents of the variables passed to the view. You may also echo the results of any PHP function. In fact, you can put any PHP code you wish inside of a Octopy echo statement:
 
-```html
+```php
     The current UNIX timestamp is {{ time() }}.
 ```
 #### Displaying Unescaped Data
 
 By default, Octopy `{{ }}` statements are automatically sent through PHP's `htmlspecialchars` function to prevent XSS attacks. If you do not want your data to be escaped, you may use the following syntax:
 
-```html
+```php
 Hello, {{{ $name }}}.
 ```
 
@@ -108,7 +108,7 @@ Sometimes you may pass an array to your view with the intention of rendering it 
 ```
 However, instead of manually calling `json_encode`, you may use the `@json` Octopy directive:
 
-```html
+```php
 <script>
     var app = @json($array);
 </script>
@@ -116,7 +116,7 @@ However, instead of manually calling `json_encode`, you may use the `@json` Octo
 
 The `@json` directive is also useful for seeding Vue components or `data-*` attributes:
 
-```html
+```php
 <example-component :some-prop='@json($array)'></example-component>
 ```
 
@@ -130,7 +130,7 @@ In addition to template inheritance and displaying data, Octopy also provides co
 
 You may construct `if` statements using the `@if`, `@elseif`, `@else`, and `@endif` directives. These directives function identically to their PHP counterparts:
 
-```html
+```php
 @if (count($records) === 1)
     I have one record!
 @elseif (count($records) > 1)
@@ -142,7 +142,7 @@ You may construct `if` statements using the `@if`, `@elseif`, `@else`, and `@end
 
 In addition to the conditional directives already discussed, the `@isset` and `@empty` directives may be used as convenient shortcuts for their respective PHP functions:
 
-```html
+```php
 @isset($records)
     // $records is defined and is not null...
 @endisset
@@ -154,7 +154,7 @@ In addition to the conditional directives already discussed, the `@isset` and `@
 
 #### Section Directives
 
-```html
+```php
 <div class="pull-right">
     @yield('navigation')
 </div>
@@ -166,7 +166,7 @@ In addition to the conditional directives already discussed, the `@isset` and `@
 
 Switch statements can be constructed using the `@switch`, `@case`, `@break`, `@default` and `@endswitch` directives:
 
-```html
+```php
 @switch($i)
     @case(1)
         First case...
@@ -185,7 +185,7 @@ Switch statements can be constructed using the `@switch`, `@case`, `@break`, `@d
 
 In addition to conditional statements, Octopy provides simple directives for working with PHP's loop structures. Again, each of these directives functions identically to their PHP counterparts:
 
-```html
+```php
 @for ($i = 0; $i < 10; $i++)
     The current value is {{ $i }}
 @endfor
@@ -203,7 +203,7 @@ In addition to conditional statements, Octopy provides simple directives for wor
 
 When using loops you may also end the loop or skip the current iteration:
 
-```html
+```php
 @foreach ($users as $user)
     @if ($user->type == 1)
         @continue
@@ -220,7 +220,7 @@ When using loops you may also end the loop or skip the current iteration:
 You may also include the condition with the directive declaration in one line:
 
 
-```html
+```php
 @foreach ($users as $user)
     @continue($user->type == 1)
 
@@ -234,7 +234,7 @@ You may also include the condition with the directive declaration in one line:
 
 Octopy also allows you to define comments in your views. However, unlike HTML comments, Octopy comments are not included in the HTML returned by your application:
 
-```html
+```php
 {{-- This comment will not be present in the rendered HTML --}}
 ```
 
@@ -242,15 +242,15 @@ Octopy also allows you to define comments in your views. However, unlike HTML co
 
 In some situations, it's useful to embed PHP code into your views. You can use the Octopy `@php` directive to execute a block of plain PHP within your template:
     
-```html
-    // Single Line...
-    @php($firstname = 'Supian'; $lastname = 'M')
+```php
+// Single Line...
+@php($firstname = 'Supian'; $lastname = 'M')
     
-    // Multiple Line...
-    @php
-        $firstname = 'Supian';
-        $lastname  = 'M';
-    @endphp
+// Multiple Line...
+@php
+    $firstname = 'Supian';
+    $lastname  = 'M';
+@endphp
 ```
 
 > While Octopy provides this feature, using it frequently may be a signal that you have too much logic embedded within your template.
@@ -261,7 +261,7 @@ In some situations, it's useful to embed PHP code into your views. You can use t
 
 Anytime you define an HTML form in your application, you should include a hidden CSRF token field in the form so that [the CSRF protection](/docs/csrf) middleware can validate the request. You may use the `@csrf` Octopy directive to generate the token field:
 
-```html
+```php
 <form method="POST" action="/profile">
     @csrf
     ...
@@ -272,7 +272,7 @@ Anytime you define an HTML form in your application, you should include a hidden
 
 Octopy's `@include` directive allows you to include a Octopy view from within another view. All variables that are available to the parent view will be made available to the included view:
 
-```html
+```php
 <div>
     @include('shared.errors')
 
@@ -284,7 +284,7 @@ Octopy's `@include` directive allows you to include a Octopy view from within an
 
 Even though the included view will inherit all data available in the parent view, you may also pass an array of extra data to the included view:
 
-```html
+```php
  @include('view.name', ['some' => 'data'])
 ```
 
@@ -296,7 +296,7 @@ If you attempt to `@include` a view which does not exist, Octopy will throw an e
 
 The `@inject` directive may be used to retrieve a service from the Octopy [service container](/docs/container). The first argument passed to `@inject` is the name of the variable the service will be placed into, while the second argument is the class or interface name of the service you wish to resolve:
 
-```html
+```php
 @inject('metrics', 'App\Service\MetricsService')
 
 <div>
@@ -324,7 +324,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app['view']->directive('datetime', function ($expression) {
+        $this->app->view->directive('datetime', function ($expression) {
             return "<?php echo ($expression)->format('m/d/Y H:i'); ?>";
         });
     }

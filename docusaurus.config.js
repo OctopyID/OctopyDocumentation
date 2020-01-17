@@ -35,11 +35,6 @@ module.exports = {
           label: 'Blog', 
           position: 'right'
         },
-        {
-          href: 'https://github.com/SupianIDz/OctopyFramework',
-          label: 'GitHub',
-          position: 'right',
-        },
       ],
     },
     footer: {
@@ -54,7 +49,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/SupianIDz/OctopyDocumentation/edit/master/website/',
+            'https://github.com/OctopyID/OctopyDocumentation/edit/master/website/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

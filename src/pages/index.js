@@ -52,7 +52,7 @@ function Home() {
           <div class="row">
             <div class="col padding-top--lg">
               <h1 className="hero__title">{siteConfig.tagline}</h1>
-              <p className="hero__subtitle">Octopy is a lightweight MVC framework inspired by Laravel and less footprint.</p>
+              <p className="hero__subtitle">Octopy is a lightweight MVC framework inspired by Laravel with small footprint.</p>
               <div className={styles.buttons}>
                 <Link
                   className={classnames(
@@ -62,9 +62,18 @@ function Home() {
                   to={useBaseUrl('docs/installation')}>
                   Get Started
                 </Link>
+
+                <Link
+                  className={classnames(
+                    'button button--secondary button--lg button--outline octopy--button-white',
+                    styles.getStarted,
+                  )}
+                  to="https://github.com/OctopyID/OctopyFramework">
+                  Github
+                </Link>
               </div>
             </div>
-            <div class="col text--center"><img src={useBaseUrl('img/octopy-600px.png')} alt="{siteConfig.title}" /></div>
+            <div class="col text--center padding-top--md"><img src={useBaseUrl('img/octopy-600px.png')} alt="{siteConfig.title}" /></div>
           </div>
         </div>
       </header>
