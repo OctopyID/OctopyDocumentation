@@ -11,6 +11,7 @@ module.exports = {
     "Getting Started": ["installation", "configuration", "structure", "deployment"],
     "Architecture": ["lifecycle", "container"],
     "The Basics": ["routing", "middleware", "csrf", "controller", "request"],
-    "Frontend": ["templating", "localization"]
+    "Frontend": ["templating", "localization"],
+    "Security": ["encryption"]
   },
 };

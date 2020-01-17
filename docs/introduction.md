@@ -32,5 +32,3 @@ Do not use this if:
 * You prefer not to work with potential breaking changes and/or features not yet working properly as we improve it during alpha period.
 
 Octopy is built with high attention to your experience building your site and maintaining it with your collaborators and contributors.
-
-## Features
