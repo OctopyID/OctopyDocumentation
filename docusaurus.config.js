@@ -49,7 +49,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/OctopyID/OctopyDocumentation/edit/master/website/',
+            'https://github.com/OctopyID/OctopyDocumentation/edit/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
