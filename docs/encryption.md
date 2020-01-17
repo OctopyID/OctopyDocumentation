@@ -35,7 +35,7 @@ class UserController extends Controller
      * @return Response
      */
     public function store(Request $request, $id)
-     {
+    {
         $user = User::find($id);
 
         $user->fill([
