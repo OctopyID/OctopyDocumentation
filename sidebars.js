@@ -12,6 +12,6 @@ module.exports = {
     "Architecture": ["lifecycle", "container"],
     "The Basics": ["routing", "middleware", "csrf", "controller", "request"],
     "Frontend": ["templating", "localization"],
-    "Security": ["encryption"]
+    "Security": ["encryption", "hashing"]
   },
 };
