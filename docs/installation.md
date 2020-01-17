@@ -24,6 +24,8 @@ git clone https://github.com/SupianIDz/OctopyFramework.git
 
 cd OctopyFramework
 
+cp .env.example .env
+
 php octopy key:generate
 ```
 
