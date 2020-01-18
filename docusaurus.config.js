@@ -7,6 +7,7 @@ module.exports = {
   organizationName: 'Octopy ID', // Usually your GitHub org/user name.
   projectName: 'OctopyDocumentation', // Usually your repo name.
   themeConfig: {
+    disableDarkMode: true,
     prism: {
       defaultLanguage: 'php',
       theme: require('prism-react-renderer/themes/github'),
@@ -35,10 +36,18 @@ module.exports = {
           label: 'Blog', 
           position: 'right'
         },
+        {
+          to: 'https://github.com/OctopyID/OctopyFramework', 
+          label: 'Github', 
+          position: 'right'
+        },
       ],
     },
     footer: {
-      // style: 'dark',
+      logo: {
+        alt: 'Octopy Logo',
+        src: 'img/footer.png',
+      },
       copyright: `Copyright © ${new Date().getFullYear()} Octopy ID - All Right Reserved.`,
     },
   },
