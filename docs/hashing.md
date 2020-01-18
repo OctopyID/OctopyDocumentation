@@ -27,7 +27,7 @@ namespace App\HTTP\Controller;
 
 use App\DB\User;
 use App\HTTP\Controller;
-use Octopy\Http\Request;
+use Octopy\HTTP\Request;
 use Octopy\Support\Facade\Hash;
 
 class UpdatePasswordController extends Controller
