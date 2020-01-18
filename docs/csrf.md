@@ -10,7 +10,7 @@ Octopy makes it easy to protect your application from [cross-site request forger
 
 Octopy automatically generates a CSRF "token" for each active user session managed by the application. This token is used to verify that the authenticated user is the one actually making the requests to the application.
 
-Anytime you define an HTML form in your application, you should include a hidden CSRF token field in the form so that the CSRF protection middleware can validate the request. You may use the `@csrf` Blade directive to generate the token field:
+Anytime you define an HTML form in your application, you should include a hidden CSRF token field in the form so that the CSRF protection middleware can validate the request. You may use the `@csrf` Octopy directive to generate the token field:
 
 ```html
 <form method="POST" action="/profile">

@@ -10,7 +10,7 @@ module.exports = {
     "Prologue": ["introduction", "contributions", "license"],
     "Getting Started": ["installation", "configuration", "structure", "deployment"],
     "Architecture": ["lifecycle", "container"],
-    "The Basics": ["routing", "middleware", "csrf", "controller", "request"],
+    "The Basics": ["routing", "middleware", "csrf", "controller", "request", "response"],
     "Frontend": ["templating", "localization"],
     "Security": ["encryption", "hashing"]
   },
