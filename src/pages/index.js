@@ -73,7 +73,7 @@ function Home() {
                 </Link>
               </div>
             </div>
-            <div class="col text--center padding-top--md"><img src={useBaseUrl('img/octopy-600px.png')} alt="{siteConfig.title}" /></div>
+            <div class="col text--center padding-top--md"><img src={useBaseUrl('img/octopy.png')} alt="{siteConfig.title}" /></div>
           </div>
         </div>
       </header>
