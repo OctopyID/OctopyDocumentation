@@ -12,12 +12,12 @@ module.exports = {
       defaultLanguage: 'php',
       theme: require('prism-react-renderer/themes/github'),
     },
-    // algolia: {
-    //     apiKey: '4ca4b0912376cb10c68ef0fa8ba044df',
-    //     indexName: 'octopy-framework',
-    //     algoliaOptions: {},
-    //     placeholder: 'Search...'
-    // },
+    algolia: {
+        apiKey: 'd509cfa6d69f37b105528cea874322d5',
+        indexName: 'octopy_framework',
+        algoliaOptions: {},
+        placeholder: 'Search...'
+    },
     navbar: {
       search: true,
       title: 'Octopy Framework',
