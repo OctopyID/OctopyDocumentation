@@ -63,11 +63,11 @@ return $response->body($content)
 // or
 
 return $response->body($content)
-            ->header([
-                'Content-Type' => $type,
-                'X-Header-One' => 'Header Value',
-                'X-Header-Two' => 'Header Value',
-            ]);
+                ->header([
+                    'Content-Type' => $type,
+                    'X-Header-One' => 'Header Value',
+                    'X-Header-Two' => 'Header Value',
+                ]);
 ```
 
 ## Redirects
@@ -78,7 +78,7 @@ Redirect responses are instances of the `Octopy\HTTP\RedirectResponse` class, an
     Route::get('dashboard', function (Octopy\HTTP\Response $response) {
         return $response->redirect('home/dashboard', 301, [
             'X-Header-One' => 'Header Value',
-                'X-Header-Two' => 'Header Value',
+            'X-Header-Two' => 'Header Value',
         ]);
     });
 ```
@@ -169,7 +169,7 @@ If you would like to define a custom response that you can re-use in a variety o
 
 namespace App\Provider;
 
-use Octopy\Support\Facades\Response;
+use Octopy\Support\Facade\Response;
 use Octopy\Provider\ServiceProvider;
 
 class ResponseMacroServiceProvider extends ServiceProvider
