@@ -63,10 +63,6 @@ a:hover {
 	background-color: var(--ifm-footer-background-color);
 }
 
-.heroBanner_src-pages- {
-	clip-path: polygon(0 0,100% 0,100% calc(100% - 5vw),0 100%);
-}
-
 .octopy--button {
     color: var(--ifm-color-primary) !important;
 }
@@ -82,7 +78,3 @@ section.features_src-pages- {
 li > .contents__link {
 	font-weight: 600;
 }
-
-/*pre {
-	font-size: 85%;
-}*/
