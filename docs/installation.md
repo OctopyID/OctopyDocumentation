@@ -16,8 +16,16 @@ The Octopy framework has a few system requirements. You will need to make sure y
 ## Installing Octopy
 Before using Octopy, make sure you have composer or git installed on your machine.
 
+### Via Composer Create-Project
+
+Alternatively, you may also install Octopy by issuing the Composer create-project command in your terminal:
+
+```bash
+composer create-project octopyid/octopyframework --stability=dev
+```
+
 ### Via GIT
-Alternatively, you may also install Octopy by clone Octopy from our repository:
+Or you can install manually by clone from our repository:
 
 ```bash
 git clone https://github.com/SupianIDz/OctopyFramework.git
